@@ -13,7 +13,7 @@ def coincidence(*args):
             for num in args[0]:
                 #Если значение число или число с плавающей точкой
                 if type(num) is int or type(num) is float:
-                    #проверяет входит ли в диапозон 
+                    #Проверяет входит ли в диапозон 
                     if args[1][0] <= num <= args[1][-1]:
                         answers.append(num) #Добавляет значение в список
             
