@@ -1,5 +1,6 @@
 def multiply_numbers(value = None):
     """Функция которая  который вернет произведение цифр, входящих в inputs."""
+    
     total_product = None #Изначально произведение равно
 
     value = str(value) #Перевод значения в строку

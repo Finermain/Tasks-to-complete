@@ -2,6 +2,7 @@ import string
 
 def is_palindrome(request):
     """Функция is_palindrome принимает значение и проверяет палиндроммность."""
+    
     request = str(request) #Переводит любой тип данных в слово
 
     request = request.lower() #Делает слово с маленькой буквы
