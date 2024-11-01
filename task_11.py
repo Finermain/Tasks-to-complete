@@ -4,7 +4,7 @@ class Dessert:
     NOT_HEALTHY_CALORIES = 200 #Константа отметки калорий 
 
     def __init__(self, name="Вкусность", calories=100):
-        """Констурктор класса принимающий атрибуты name, calories."""
+        """Конструктор класса принимающий атрибуты name, calories."""
 
         #Проверка на строку
         if type(name) != str:
@@ -67,7 +67,3 @@ class Dessert:
     def is_delicious(self):
         """Функция возвращает true всем десертам."""
         return True
-
-#Примеры которые должны проверять task_xx.py
-cake = Dessert()
-print(cake.name, cake.calories, cake.is_healthy(), cake.is_delicious()) # => Вкусность 100 True True
