@@ -38,9 +38,4 @@ def connect_dicts(first_dict_values, second_dict_values):
     #Сортирует словарь используя значения из кортежа 
     print_dict_values = dict(sorted(print_dict_values.items(), key=lambda nums: nums[1]))
 
-    print(print_dict_values)
-
-#Примеры которые должны проверять task_xx.py
-connect_dicts({ "a": 2, "b": 12 }, { "c": 11, "e": 5 }) # => { "c": 11, "b": 12 }
-connect_dicts({ "a": 13, "b": 9, "d": 11 }, { "c": 12, "a": 15 }) # => { d: 11, "c": 12, "a": 13 }
-connect_dicts({ "a": 14, "b": 12 }, { "c": 11, "a": 15 }) # => { "c": 11, "b": 12, "a": 15 } 
+    return print_dict_values #Возвращает 

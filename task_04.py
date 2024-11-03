@@ -32,13 +32,7 @@ def sort_list(values):
 
         values.append(min_num) #Добавляем минимальное значение в конец
 
-        print(values)
+        return values
 
     except:
-        print(values)
-
-#Примеры которые должны проверять task_xx.py
-sort_list([]) # => []
-sort_list([2, 4, 6, 8]) # => [8, 4, 6, 2, 2]
-sort_list([1]) # => [1, 1]
-sort_list([1, 2, 1, 3]) # => [3, 2, 3, 1, 1]
+        return values

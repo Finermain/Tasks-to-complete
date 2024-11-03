@@ -41,8 +41,3 @@ class JellyBean (Dessert):
         
         else:
             return True
-
-#Примеры которые должны проверять task_xx.py
-jellybean = JellyBean("Black licorice")
-jellybean.flavor = "Апельсин"
-print(jellybean.name, jellybean.calories, jellybean.flavor, jellybean.is_healthy(), jellybean.is_delicious())

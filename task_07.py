@@ -22,7 +22,4 @@ def combine_anagrams(values):
     for mas in anagram_words:
         print_message.append(anagram_words[mas]) #Добавляет массив в переменную массива
 
-    print(print_message) #TODO: Если вывод должен быть идентичным вашему, переделаю.
-
-#Примеры которые должны проверять task_xx.py
-combine_anagrams(["cars", "for", "potatoes", "racs", "four", "scar", "creams", "scream"]) # => [ ["cars", "racs", "scar"], ["four"], ["for"], ["potatoes"], ["creams", "scream"] ]
+    return print_message #TODO: Если вывод должен быть идентичным вашему, переделаю.

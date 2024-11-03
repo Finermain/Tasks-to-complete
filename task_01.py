@@ -23,16 +23,9 @@ def is_palindrome(request):
         i += 1
         j -= 1
 
-    #Проверяет результат после цикла и выводит
+    #Проверяет результат после цикла и возвращает
     if request_palindrome:
-        print(True)
+        return True
         
     else:
-        print(False)
-
-#Примеры которые должны проверять task_xx.py
-is_palindrome("A man, a plan, a canal -- Panama") # => True
-is_palindrome("Madam, I'm Adam!") # => True
-is_palindrome(333) # => True
-is_palindrome(None) # => False
-is_palindrome("Abracadabra") # => False
+        return False

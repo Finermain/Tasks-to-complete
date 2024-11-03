@@ -49,14 +49,8 @@ def rps_game_winner(values):
 
             exception_choice(values) #Проверяет на стандартный выбор предметов в игре
 
-            print(who_win(values)) #Выводит победителя
+            return who_win(values) #Возвращает победителя
 
         #Блок исключения 
         except ValueError as e:
-            print(e)
-        
-#Примеры которые должны проверять task_xx.py
-rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']]) # => WrongNumberOfPlayersError
-rps_game_winner([['player1', 'P'], ['player2', 'A']]) # => NoSuchStrategyError
-rps_game_winner([['player1', 'P'], ['player2', 'S']]) # => 'player2 S'
-rps_game_winner([['player1', 'P'], ['player2', 'P']]) # => 'player1 P'
+            return e

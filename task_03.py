@@ -10,7 +10,7 @@ def max_odd(values):
             #Если это число или число с точкой
             if type(el) == int or type(el) == float:
                 #И число делится на 3 с остатком ноль
-                if el % 3 == 0:
+                if el % 2 != 0:
                     #При этом нечетный эллемент равен None то он приравнивается
                     if odd == None:
                         odd = int(el) #Числа как 21.0 = 21 конвентируются
@@ -19,14 +19,7 @@ def max_odd(values):
                     if el > odd:
                         odd = int(el)
 
-        print(odd)
+        return odd
 
     except:
-        print(None)
-
-#Примеры которые должны проверять task_xx.py
-max_odd([1, 2, 3, 4, 4]) # => 3
-max_odd([21.000, 2, 3, 4, 4]) # => 21
-max_odd(['ololo', 2, 3, 4, [1, 2], None]) # => 3
-max_odd(['ololo', 'fufufu']) # => None
-max_odd([2, 2, 4]) # => None
+        return None
