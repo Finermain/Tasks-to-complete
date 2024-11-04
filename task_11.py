@@ -3,22 +3,12 @@ class Dessert:
 
     NOT_HEALTHY_CALORIES = 200 #Константа отметки калорий 
 
-    def __init__(self, name="Вкусность", calories=100):
+    def __init__(self, name="Вкусность", calories="100"):
         """Конструктор класса принимающий атрибуты name, calories."""
 
-        #Проверка на строку
-        if type(name) != str:
-            self.__name = "Вкусность"
+        self.__name = name
 
-        else:
-            self.__name = name
-
-        #Проверка на число и число с плавающей точкой
-        if not isinstance(calories, (int, float)):
-            self.__calories = 100
-
-        else:
-            self.__calories = calories
+        self.__calories = calories
 
     @property
     def name(self):
@@ -30,12 +20,7 @@ class Dessert:
     def name(self, name):
         """Установка значения имени."""
 
-        #Проверка на строку
-        if type(name) == str:
-            self.__name = name
-
-        else:
-            print("Некоректное имя.")
+        self.__name = name
 
     @property
     def calories(self):
@@ -47,23 +32,26 @@ class Dessert:
     def calories(self, calories):
         """Установка количества калорий."""
 
-        #Проверка на число и число с плавающей точкой
-        if isinstance(calories, (int, float)):
-            self.__calories = calories
-
-        else:
-            print("Неправильный формат количества калорий.")
+        self.__calories = str(calories)
 
     def is_healthy(self):
         """Функция проверяет на то ,считается ли десерт здоровым для употребления."""
 
-        #Если кол-во калорий меньше чем максимально допустимое
-        if self.__calories < self.NOT_HEALTHY_CALORIES:
-            return True
-        
-        else:
-            return False
+        #Блок проверки
+        try:
+            calories = int(self.__calories) #Если написано число словом то переводит
 
+            #Если калорийность меньше константы
+            if calories < self.NOT_HEALTHY_CALORIES:
+                return True #Вернет правду
+            
+            else:
+                return False #Либо ложь 
+   
+        #Блок исключения
+        except ValueError:
+            return str(False) + " - калорийность измеряется в числах. Не полезные слова :("
+        
     def is_delicious(self):
         """Функция возвращает true всем десертам."""
         return True

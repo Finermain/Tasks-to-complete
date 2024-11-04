@@ -1,3 +1,15 @@
+#Классы основанные на исключениях для вызова ошибок
+class NoSuchStrategyError(Exception):
+    """Класс проверяет на ход игроков отличительный от R, P и S."""
+
+    pass
+
+#Классы основанные на исключениях для вызова ошибок
+class WrongNumberOfPlayersError(Exception):
+    """Класс проверяет на количество игроков , должно быть не больше 2."""
+
+    pass
+
 def who_win(values):
     """Функция определяет кто победитель где P - бумага, S - ножницы, R - камень."""
 
@@ -31,14 +43,14 @@ def exception_choice(values):
             if i == 1:
                 #Если он не равен этит трем значениям
                 if player not in ['P', 'S', 'R']:
-                    raise ValueError("NoSuchStrategyError") #Выведет ошибку в основном блоке исключений
+                    raise NoSuchStrategyError("Ход игроков не должен быть отличительный от R, P и S.") #Выведет ошибку в основном блоке исключений
      
 def exception_players(values):
         """Функция проверяет на количество игроков , должно быть не больше 2."""
 
         #Если длина не равна 2
         if len(values) != 2:
-            raise ValueError("WrongNumberOfPlayersError") #Выведет ошибку в основном блоке исключений
+            raise WrongNumberOfPlayersError("Количество игроков , должно быть не больше 2.") #Выведет ошибку в основном блоке исключений
 
 def rps_game_winner(values):
         """Основной метод - функция которая отвечает за логику программы Камень-Ножницы-Бумага."""
@@ -52,5 +64,9 @@ def rps_game_winner(values):
             return who_win(values) #Возвращает победителя
 
         #Блок исключения 
-        except ValueError as e:
+        except WrongNumberOfPlayersError as e:
+            return e
+
+        #Блок исключения 
+        except NoSuchStrategyError as e:
             return e
